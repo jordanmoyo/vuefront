@@ -8,8 +8,8 @@
             <li class = "nav-brand"> <a href="https://github.com/jordan237prog/CRUD_nodeVueMsql#readme" target="_blank" >Jordan GitHub</a> </li>
           </div>
 
-          <div>
-            <li class = "nav-link"> <a href="/tutorials">Tutorials</a> </li>
+          <div >
+            <li class = "nav-link" @click="retrieveTutorials" > <a href="/tutorials">Tutorials</a> </li>
           </div>
 
           <div>
@@ -30,15 +30,28 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+import TutorialDataService from './services/TutorialDataService'
 
 export default {
-  name: 'App',
-  components: {
+    name: 'App',
+    components: {
+      
+    },
     
-  }
+    methods    : {
+            retrieveTutorials(){
+                TutorialDataService.getAll()
+                    .then(response => {
+                        this.tutorials = response.data;
+                        console.log(response);
+                    })
+                    .catch(e => console.log (e));
+            }
+    }
 }
+
 </script>
+
 
 <style>
 *{
