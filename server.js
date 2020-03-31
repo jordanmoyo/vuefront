@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 //here we are configuring dist to serve app files
-app.use( serveStatic(path.join(__dirname, '/dist')));
+app.use('/', serveStatic(path.join(__dirname, '/dist')));
 
 
 
@@ -14,6 +14,7 @@ app.use( serveStatic(path.join(__dirname, '/dist')));
 app.get(/.*/,  (req, res) => {
 	res.sendfile(path.join(__dirname, '/dist/index.html'));
 });
+
 
 const port = process.env.PORT || 8080;
 app.listen(port);
