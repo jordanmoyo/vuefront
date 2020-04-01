@@ -30,11 +30,7 @@
                     @click="setActiveTutorial(tutorial, index)"
 
                     >{{ tutorial.title || tutorial }}</li>
-                    <li class="list-group-item">testing app</li>
-                    <li class="list-group-item">testing app</li>
-                    <li class="list-group-item">testing app</li>
-                    <li class="list-group-item">testing app</li>
-                    
+                   
                 </ul>
 
                 
