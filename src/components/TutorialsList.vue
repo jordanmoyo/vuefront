@@ -31,7 +31,7 @@
 
                     >{{ tutorial.title || tutorial }}</li>
                    
-                </ul>
+                </ul> 
 
                 
 
